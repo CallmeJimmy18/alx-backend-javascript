@@ -4,6 +4,10 @@ const { readFile } = require('fs');
 const hostname = '127.0.0.1';
 const port = 1245;
 
+/**
+ * Counts the students in a CSV data file.
+ * @param {String} fileName The path to the CSV data file.
+ */
 function countStudents(fileName) {
   const stdnts = {};
   const fields = {};

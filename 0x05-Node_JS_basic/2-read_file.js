@@ -1,6 +1,10 @@
 const fs = require('fs');
 
-function countStudents(fileName) {
+/**
+ * Counts the students in a CSV data file.
+ * @param {String} fileName The path to the CSV data file.
+ */
+const countStudents = (fileName) => {
   const students = {};
   const fields = {};
 	

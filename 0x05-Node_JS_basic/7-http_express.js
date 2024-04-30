@@ -5,6 +5,10 @@ const { readFile } = require('fs');
 const app = express();
 const port = 1245;
 
+/**
+ * Counts the students in a CSV data file.
+ * @param {String} dataPath The path to the CSV data file.
+ */
 function countStudents(fileName) {
   const stdnts = {};
   const fields = {};
