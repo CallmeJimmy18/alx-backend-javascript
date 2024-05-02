@@ -16,24 +16,16 @@ app.get('/cart/:id([0-9]+)', (req, res) => {
 });
 
 app.get('/available_payments', (_, res) => {
-  res.set("Content-Type", "application/json");
-  const payMethods = {
-    payment_methods: {
-      credit_cards: true,
-      paypal: false
-    }
-  }
-  res.send(payMethods);
+  res.json({ payment_methods: { credit_cards: true, paypal: false } })
 });
 
 app.post('/login', (req, res) => {
-  const username = req.body.userName;
+  let username = '';
 
-  if (username) {
-    res.send(`Welcome ${username}`);
-  } else {
-    res.status(404).send();
+  if (req.body) {
+    username = req.body.userName;
   }
+  res.send(`Welcome ${username}`);
 });
 
 app.listen(PORT, () => {
