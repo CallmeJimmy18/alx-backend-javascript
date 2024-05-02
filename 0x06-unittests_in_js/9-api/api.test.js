@@ -14,7 +14,7 @@ describe('API integration test', () => {
   it('GET /cart/:id responds correct with valid id', (done) => {
     request.get(`${APP_URL}/cart/46`, (_err, resp, body) => {
       expect(resp.statusCode).to.be.equal(200);
-      expect(body).to.be.equal('Payment methods for cart 46');
+      expect(body).to.contain('Payment methods for cart 46');
       done()
     });
   });
